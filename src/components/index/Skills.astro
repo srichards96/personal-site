@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import SkillsList from "./SkillsList.astro";
 
 type Skill = { name: string; logo: string };
 
@@ -49,63 +50,15 @@ const services: Skill[] = [
     </p>
 
     <h2 class="text-xl sm:text-2xl mb-4">Languages</h2>
-
-    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-      {
-        languages.map(({ name, logo }) => (
-          <div class="flex items-center gap-4">
-            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
-              <Icon class="w-6" name={logo} />
-            </div>
-            <span class="text-xl">{name}</span>
-          </div>
-        ))
-      }
-    </div>
+    <SkillsList items={languages} />
 
     <h2 class="text-xl sm:text-2xl mb-4">Frameworks and Libraries</h2>
-
-    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-      {
-        frameworks.map(({ name, logo }) => (
-          <div class="flex items-center gap-4">
-            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
-              <Icon class="w-6" name={logo} />
-            </div>
-            <span class="text-xl">{name}</span>
-          </div>
-        ))
-      }
-    </div>
+    <SkillsList items={frameworks} />
 
     <h2 class="text-xl sm:text-2xl mb-4">Tools</h2>
-
-    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-      {
-        tools.map(({ name, logo }) => (
-          <div class="flex items-center gap-4">
-            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
-              <Icon class="w-6" name={logo} />
-            </div>
-            <span class="text-xl">{name}</span>
-          </div>
-        ))
-      }
-    </div>
+    <SkillsList items={tools} />
 
     <h2 class="text-xl sm:text-2xl mb-4">Services</h2>
-
-    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-      {
-        services.map(({ name, logo }) => (
-          <div class="flex items-center gap-4">
-            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
-              <Icon class="w-6" name={logo} />
-            </div>
-            <span class="text-xl">{name}</span>
-          </div>
-        ))
-      }
-    </div>
+    <SkillsList items={services} />
   </div>
 </section>
