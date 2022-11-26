@@ -1,5 +1,111 @@
+---
+import { Icon } from "astro-icon";
+
+type Skill = { name: string; logo: string };
+
+const languages: Skill[] = [
+  { name: "JavaScript", logo: "logos:javascript" },
+  { name: "TypeScript", logo: "logos:typescript-icon" },
+  { name: "SQL", logo: "vscode-icons:file-type-sql" },
+  { name: "SCSS", logo: "vscode-icons:file-type-scss" },
+  { name: "C#", logo: "logos:c-sharp" },
+  { name: "Java", logo: "logos:java" },
+  { name: "Python", logo: "logos:python" },
+];
+
+const frameworks: Skill[] = [
+  { name: "Node.js", logo: "logos:nodejs-icon" },
+  { name: "React", logo: "logos:react" },
+  { name: "Next.js", logo: "simple-icons:nextdotjs" },
+  { name: "Express", logo: "simple-icons:express" },
+  { name: "TailwindCSS", logo: "logos:tailwindcss-icon" },
+  { name: "Jest", logo: "vscode-icons:file-type-jest" },
+  { name: "Prisma", logo: "logos:prisma" },
+  { name: "Astro", logo: "vscode-icons:file-type-astro" },
+  { name: "jQuery", logo: "mdi:jquery" },
+  { name: "Angular", logo: "logos:angular-icon" },
+];
+
+const tools: Skill[] = [
+  { name: "Git", logo: "mdi:git" },
+  { name: "Postman", logo: "logos:postman-icon" },
+  { name: "Figma", logo: "logos:figma" },
+];
+
+const services: Skill[] = [
+  { name: "TeamCity", logo: "simple-icons:teamcity" },
+  { name: "Octopus Deploy", logo: "logos:octopus-deploy" },
+  { name: "Netlify", logo: "vscode-icons:file-type-netlify" },
+];
+---
+
 <section id="skills" class="pt-[96px] mt-[-96px] sm:pt-[64px] sm:mt-[-64px]">
-  <div class="min-h-[400px] container mx-auto p-4">
-    <h1>Skills</h1>
+  <div class="min-h-[400px] container-narrow mx-auto p-4">
+    <h1 class="text-2xl sm:text-4xl mb-4">Skills and Technologies Used</h1>
+
+    <p class="mb-8">
+      Here are some of the technologies that I've used at work or while working
+      on personal projects:
+    </p>
+
+    <h2 class="text-xl sm:text-2xl mb-4">Languages</h2>
+
+    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      {
+        languages.map(({ name, logo }) => (
+          <div class="flex items-center gap-4">
+            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
+              <Icon class="w-6" name={logo} />
+            </div>
+            <span class="text-xl">{name}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2 class="text-xl sm:text-2xl mb-4">Frameworks and Libraries</h2>
+
+    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      {
+        frameworks.map(({ name, logo }) => (
+          <div class="flex items-center gap-4">
+            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
+              <Icon class="w-6" name={logo} />
+            </div>
+            <span class="text-xl">{name}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2 class="text-xl sm:text-2xl mb-4">Tools</h2>
+
+    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      {
+        tools.map(({ name, logo }) => (
+          <div class="flex items-center gap-4">
+            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
+              <Icon class="w-6" name={logo} />
+            </div>
+            <span class="text-xl">{name}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2 class="text-xl sm:text-2xl mb-4">Services</h2>
+
+    <div class="mb-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      {
+        services.map(({ name, logo }) => (
+          <div class="flex items-center gap-4">
+            <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
+              <Icon class="w-6" name={logo} />
+            </div>
+            <span class="text-xl">{name}</span>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
