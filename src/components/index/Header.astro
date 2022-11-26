@@ -1,0 +1,43 @@
+---
+const sharedHeaderClasses =
+  "fixed left-0 top-0 right-0 bg-black bg-opacity-80 text-white backdrop-blur-sm";
+const linkClasses = "text-lg hover:underline focus:underline";
+---
+
+<header>
+  <!-- Desktop header spacer -->
+  <div class="hidden sm:block h-[64px]"></div>
+  <!-- Desktop header -->
+  <nav class={`${sharedHeaderClasses} hidden sm:block h-[64px]`}>
+    <div
+      class="h-full container mx-auto px-4 flex gap-4 items-center justify-between"
+    >
+      <a href="#" class="text-2xl font-bold text-purple-500">Scott Richards</a>
+
+      <div class="h-full flex gap-4 items-center">
+        <a href="#skills" class={linkClasses}>Skills</a>
+        <a href="#projects" class={linkClasses}>Projects</a>
+        <a href="#about" class={linkClasses}>About</a>
+        <a href="#contact" class={linkClasses}>Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile header spacer -->
+  <div class="block sm:hidden h-[96px]"></div>
+  <!-- Mobile header -->
+  <nav class={`${sharedHeaderClasses} block sm:hidden h-[96px]`}>
+    <div
+      class="h-[96px] container mx-auto p-4 flex flex-col gap-2 items-center justify-between"
+    >
+      <a href="#" class="text-2xl font-bold text-purple-500">Scott Richards</a>
+
+      <div class="flex gap-4 items-center">
+        <a href="#skills" class={linkClasses}>Skills</a>
+        <a href="#projects" class={linkClasses}>Projects</a>
+        <a href="#about" class={linkClasses}>About</a>
+        <a href="#contact" class={linkClasses}>Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
