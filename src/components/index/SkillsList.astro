@@ -12,7 +12,7 @@ const { items } = Astro.props;
   {
     items.map(({ name, logo }) => (
       <div class="flex items-center gap-4">
-        <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700">
+        <div class="flex shrink-0 items-center justify-center border rounded-full w-12 h-12 bg-zinc-800 border-zinc-700 overflow-hidden">
           <Icon class="w-6" name={logo} />
         </div>
         <span class="text-xl">{name}</span>
