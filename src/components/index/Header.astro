@@ -1,42 +1,34 @@
 ---
-const sharedHeaderClasses =
-  "fixed left-0 top-0 right-0 bg-black bg-opacity-80 text-white backdrop-blur-sm";
-const linkClasses = "text-lg hover:underline focus:underline";
+type HeaderLink = {
+  href: string;
+  label: string;
+};
+
+const headerLinks: HeaderLink[] = [
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+];
 ---
 
-<header>
-  <!-- Desktop header spacer -->
-  <div class="hidden sm:block h-[64px]"></div>
-  <!-- Desktop header -->
-  <nav class={`${sharedHeaderClasses} hidden sm:block h-[64px]`}>
+<header class="sticky top-0">
+  <nav class="bg-black bg-opacity-80 text-white backdrop-blur-sm">
     <div
-      class="h-full container-narrow mx-auto px-4 flex gap-4 items-center justify-between"
+      class="h-full flex-col sm:flex-row container-narrow mx-auto p-4 flex gap-4 justify-between items-center"
     >
-      <a href="#" class="text-2xl font-bold text-purple-500">Scott Richards</a>
+      <a href="#" class="text-2xl font-bold text-purple-500 h-min"
+        >Scott Richards
+      </a>
 
-      <div class="h-full flex gap-4 items-center">
-        <a href="#skills" class={linkClasses}>Skills</a>
-        <a href="#projects" class={linkClasses}>Projects</a>
-        <a href="#about" class={linkClasses}>About</a>
-        <a href="#contact" class={linkClasses}>Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile header spacer -->
-  <div class="block sm:hidden h-[96px]"></div>
-  <!-- Mobile header -->
-  <nav class={`${sharedHeaderClasses} block sm:hidden h-[96px]`}>
-    <div
-      class="h-[96px] container-narrow mx-auto p-4 flex flex-col gap-2 items-center justify-between"
-    >
-      <a href="#" class="text-2xl font-bold text-purple-500">Scott Richards</a>
-
-      <div class="flex gap-4 items-center">
-        <a href="#skills" class={linkClasses}>Skills</a>
-        <a href="#projects" class={linkClasses}>Projects</a>
-        <a href="#about" class={linkClasses}>About</a>
-        <a href="#contact" class={linkClasses}>Contact</a>
+      <div class="inline-flex gap-4 items-center">
+        {
+          headerLinks.map(({ href, label }) => (
+            <a href={href} class="text-lg hover:underline focus:underline">
+              {label}
+            </a>
+          ))
+        }
       </div>
     </div>
   </nav>
